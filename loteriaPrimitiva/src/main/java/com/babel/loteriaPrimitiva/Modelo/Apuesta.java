@@ -6,8 +6,15 @@ import java.util.Set;
 public class Apuesta {
 
     private Set<Integer> numerosApuesta;
+
+    public Apuesta(){};
+
     public Apuesta(Set<Integer> numerosApuesta) {
         this.numerosApuesta = numerosApuesta;
+    }
+
+    public void agregarNumero(int numero) {
+            numerosApuesta.add(numero);
     }
 
     @Override
