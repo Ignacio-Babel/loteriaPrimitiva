@@ -33,6 +33,4 @@ public class ApuestaServicio implements IApuestaServicio {
         }
         return apuesta;
     }
-
-
 }
