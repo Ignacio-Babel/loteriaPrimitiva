@@ -7,7 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UsuarioServicio implements IUsuarioServicio {
     private static Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
     private Map<Integer, Usuario> users = new HashMap<>();
