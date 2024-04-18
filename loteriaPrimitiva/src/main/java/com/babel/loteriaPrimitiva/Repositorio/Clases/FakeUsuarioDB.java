@@ -12,6 +12,17 @@ public class FakeUsuarioDB implements IFakeUsuarioDB {
 	public FakeUsuarioDB(){
 		this.usuarios = new ArrayList<>();
 	}
+
+	@Override
+	public List<Usuario> listaUsuarios() {
+		List<Usuario> usuariosReduced = new ArrayList<>();
+		for (Usuario usuario : usuarios) {
+			Usuario usuarioReduced = new Usuario(usuario.getId(), usuario.getNombre());
+			usuariosReduced.add(usuarioReduced);
+		}
+		return usuariosReduced;
+	}
+
 	@Override
 	public void nuevoUsuario(Usuario usuario) {
 		usuarios.add(usuario);

@@ -1,7 +1,6 @@
 package com.babel.loteriaPrimitiva.Modelo;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Usuario {
@@ -38,4 +37,5 @@ public class Usuario {
 	public void setApuesta(Set<Apuesta> apuesta){
 		this.apuesta = apuesta;
 	}
+
 }
