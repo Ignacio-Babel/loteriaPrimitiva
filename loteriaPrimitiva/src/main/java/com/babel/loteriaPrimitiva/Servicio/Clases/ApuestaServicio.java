@@ -1,36 +1,31 @@
 package com.babel.loteriaPrimitiva.Servicio.Clases;
 
-import com.babel.loteriaPrimitiva.Modelo.Apuesta;
 import com.babel.loteriaPrimitiva.Servicio.Interfaces.IApuestaServicio;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ApuestaServicio implements IApuestaServicio {
-
-    private Set<Apuesta> apuestas;
-
-    @Override
-    public void inicializarSetApuestas() {
-        this.apuestas = new HashSet<>();
-    }
+    private Map<Integer, List<List<Integer>>> userBets = new HashMap<>();
 
     @Override
-    public boolean agregarApuesta(Apuesta apuesta) {
-        if(apuestas.add(apuesta)) return true;
-        return false;
-    }
-
-    @Override
-    public Apuesta crearApuesta() {
-        Scanner scanner = new Scanner(System.in);
-        Apuesta apuesta = new Apuesta();
-        for (int i = 0; i < 6; i++) {
-            System.out.println("Añade el numero a la apuesta: ");
-            int numero = scanner.nextInt();
-                apuesta.agregarNumero(numero);
+    public void registrarApuesta(int userId, List<Integer> numeros) {
+        if (userBets.containsKey(userId)) {
+            userBets.get(userId).add(numeros);
+        } else {
+            List<List<Integer>> bets = new ArrayList<>();
+            bets.add(numeros);
+            userBets.put(userId, bets);
         }
-        return apuesta;
+    }
+
+    @Override
+    public List<Integer> obtenerApuesta(int userId, int apuestaId) {
+        if (userBets.containsKey(userId) && apuestaId >= 0 && apuestaId < userBets.get(userId).size()) {
+            return userBets.get(userId).get(apuestaId);
+        }
+        return null;
     }
 }

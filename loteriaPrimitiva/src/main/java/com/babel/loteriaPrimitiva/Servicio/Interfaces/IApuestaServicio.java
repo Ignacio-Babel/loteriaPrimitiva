@@ -1,16 +1,8 @@
 package com.babel.loteriaPrimitiva.Servicio.Interfaces;
 
-import com.babel.loteriaPrimitiva.Modelo.Apuesta;
-
-import java.util.Scanner;
+import java.util.List;
 
 public interface IApuestaServicio {
-
-    void inicializarSetApuestas();
-
-    boolean agregarApuesta(Apuesta apuesta);
-
-    Apuesta crearApuesta();
-
-
+    void registrarApuesta(int userId, List<Integer> numeros);
+    List<Integer> obtenerApuesta(int userId, int apuestaId);
 }
