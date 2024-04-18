@@ -6,8 +6,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ApuestaServicio implements IApuestaServicio {
+
+    private static final Logger logger = LoggerFactory.getLogger(ApuestaServicio.class);
     private Map<Integer, List<List<Integer>>> userBets = new HashMap<>();
 
     @Override
