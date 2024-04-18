@@ -6,8 +6,19 @@ import java.util.Set;
 public class Apuesta {
 
     private Set<Integer> numerosApuesta;
+
+    public Apuesta(){};
+
     public Apuesta(Set<Integer> numerosApuesta) {
         this.numerosApuesta = numerosApuesta;
+    }
+
+    public void agregarNumero(int numero) {
+        if (numerosApuesta.size() < 6) {
+            numerosApuesta.add(numero);
+        } else {
+            System.out.println("No puedes agregar más de 6 números a una apuesta");
+        }
     }
 
     @Override
