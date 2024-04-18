@@ -19,6 +19,7 @@ public class UsuarioServicio implements IUsuarioServicio {
             logger.info("Usuario registrado - ID: {"+id+"}, Nombre: {"+name+"}");
         } else {
             logger.warn("Usuario registrado con ID duplicado: {"+id+"}");
+
         }
     }
 
